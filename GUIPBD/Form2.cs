@@ -12,6 +12,8 @@ namespace GUIPBD
 {
     public partial class Form2 : Form
     {
+        string mode = "";
+
         public Form2()
         {
             InitializeComponent();
@@ -23,11 +25,15 @@ namespace GUIPBD
             this.cargaDatos();
         }
 
-        private void cargaDatos() {
-            try {
+        private void cargaDatos()
+        {
+            try
+            {
                 this.empresaTableAdapter.Fill(this.pBDDataSet.Empresa);
                 this.modoEdicion("read");
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show("Error en la carga de datos: " + ex.Message.ToString());
             }
         }
@@ -44,8 +50,13 @@ namespace GUIPBD
             this.tableAdapterManager.UpdateAll(this.pBDDataSet);
 
         }
-        private void modoEdicion(string mode) {
-            switch (mode) {
+        private void modoEdicion(string mode)
+        {
+
+            this.mode = mode;
+
+            switch (mode)
+            {
                 case "read":
                     this.pnlTop.Enabled = true;
                     this.pnlButtom.Enabled = false;
@@ -86,18 +97,62 @@ namespace GUIPBD
         {
             this.modoEdicion("update");
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            try {
-                DialogResult dr = MessageBox.Show("Estas seguro de eliminar este registro",  "Eliminar", MessageBoxButtons.YesNo);
-                if (dr == DialogResult.Yes) {
-                }
-                else {
+            try
+            {
+                DialogResult dr = MessageBox.Show("Estas seguro de eliminar este registro", "Eliminar", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    int id = int.Parse(this.idEmpresaTextBox.Text);
+                    this.empresaTableAdapter.Delete(id);
                     this.cargaDatos();
                 }
-            } catch (Exception ex) {
+                else
+                {
+                    this.cargaDatos();
+                }
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show("Error en la carga de datos: " + ex.Message.ToString());
+            }
+        }
+
+        private bool validar()
+        {
+
+            this.errorProvider1.Clear();
+            bool validar = true;
+
+            if (this.razonSocialTextBox.Text.Trim() == "")
+            {
+                validar = false;
+                this.errorProvider1.SetError(this.razonSocialTextBox, "Campo rquerido");
+            }
+            return validar;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.validar()) {
+                    switch (this.mode) {
+                        case "insert":
+                            this.empresaTableAdapter.Insert(this.razonSocialTextBox.Text);
+                            break;
+                        case "update":
+                            int id = int.Parse(this.idEmpresaTextBox.Text);
+                            this.empresaTableAdapter.Update(this.razonSocialTextBox.Text, id);
+                            break;
+                    }
+                    this.cargaDatos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message.ToString());
             }
         }
     }
