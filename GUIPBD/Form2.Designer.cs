@@ -31,6 +31,8 @@ namespace GUIPBD
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.Windows.Forms.Label idEmpresaLabel;
+            System.Windows.Forms.Label razonSocialLabel;
             this.pnlTop = new System.Windows.Forms.Panel();
             this.pnlButtom = new System.Windows.Forms.Panel();
             this.btnInsert = new System.Windows.Forms.Button();
@@ -55,6 +57,10 @@ namespace GUIPBD
             this.empresaDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idEmpresaTextBox = new System.Windows.Forms.TextBox();
+            this.razonSocialTextBox = new System.Windows.Forms.TextBox();
+            idEmpresaLabel = new System.Windows.Forms.Label();
+            razonSocialLabel = new System.Windows.Forms.Label();
             this.pnlTop.SuspendLayout();
             this.pnlButtom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBDDataSet)).BeginInit();
@@ -78,10 +84,14 @@ namespace GUIPBD
             // 
             // pnlButtom
             // 
+            this.pnlButtom.Controls.Add(razonSocialLabel);
+            this.pnlButtom.Controls.Add(this.razonSocialTextBox);
+            this.pnlButtom.Controls.Add(idEmpresaLabel);
+            this.pnlButtom.Controls.Add(this.idEmpresaTextBox);
             this.pnlButtom.Controls.Add(this.btnCancelar);
             this.pnlButtom.Controls.Add(this.btnSave);
             this.pnlButtom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlButtom.Location = new System.Drawing.Point(0, 474);
+            this.pnlButtom.Location = new System.Drawing.Point(0, 340);
             this.pnlButtom.Name = "pnlButtom";
             this.pnlButtom.Size = new System.Drawing.Size(800, 119);
             this.pnlButtom.TabIndex = 1;
@@ -94,6 +104,7 @@ namespace GUIPBD
             this.btnInsert.Size = new System.Drawing.Size(86, 74);
             this.btnInsert.TabIndex = 2;
             this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // btnUpdate
             // 
@@ -103,6 +114,7 @@ namespace GUIPBD
             this.btnUpdate.Size = new System.Drawing.Size(86, 74);
             this.btnUpdate.TabIndex = 2;
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -112,6 +124,7 @@ namespace GUIPBD
             this.btnDelete.Size = new System.Drawing.Size(86, 74);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -132,6 +145,7 @@ namespace GUIPBD
             this.btnCancelar.Size = new System.Drawing.Size(86, 74);
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // pBDDataSet
             // 
@@ -268,7 +282,7 @@ namespace GUIPBD
             this.empresaDataGridView.ReadOnly = true;
             this.empresaDataGridView.RowHeadersWidth = 51;
             this.empresaDataGridView.RowTemplate.Height = 24;
-            this.empresaDataGridView.Size = new System.Drawing.Size(800, 333);
+            this.empresaDataGridView.Size = new System.Drawing.Size(800, 199);
             this.empresaDataGridView.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn1
@@ -288,11 +302,46 @@ namespace GUIPBD
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 125;
             // 
+            // idEmpresaLabel
+            // 
+            idEmpresaLabel.AutoSize = true;
+            idEmpresaLabel.Location = new System.Drawing.Point(50, 26);
+            idEmpresaLabel.Name = "idEmpresaLabel";
+            idEmpresaLabel.Size = new System.Drawing.Size(83, 17);
+            idEmpresaLabel.TabIndex = 2;
+            idEmpresaLabel.Text = "id Empresa:";
+            // 
+            // idEmpresaTextBox
+            // 
+            this.idEmpresaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresaBindingSource, "idEmpresa", true));
+            this.idEmpresaTextBox.Enabled = false;
+            this.idEmpresaTextBox.Location = new System.Drawing.Point(139, 23);
+            this.idEmpresaTextBox.Name = "idEmpresaTextBox";
+            this.idEmpresaTextBox.Size = new System.Drawing.Size(100, 22);
+            this.idEmpresaTextBox.TabIndex = 3;
+            // 
+            // razonSocialLabel
+            // 
+            razonSocialLabel.AutoSize = true;
+            razonSocialLabel.Location = new System.Drawing.Point(38, 54);
+            razonSocialLabel.Name = "razonSocialLabel";
+            razonSocialLabel.Size = new System.Drawing.Size(95, 17);
+            razonSocialLabel.TabIndex = 4;
+            razonSocialLabel.Text = "Razon Social:";
+            // 
+            // razonSocialTextBox
+            // 
+            this.razonSocialTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresaBindingSource, "RazonSocial", true));
+            this.razonSocialTextBox.Location = new System.Drawing.Point(139, 51);
+            this.razonSocialTextBox.Name = "razonSocialTextBox";
+            this.razonSocialTextBox.Size = new System.Drawing.Size(191, 22);
+            this.razonSocialTextBox.TabIndex = 5;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 593);
+            this.ClientSize = new System.Drawing.Size(800, 459);
             this.Controls.Add(this.empresaDataGridView);
             this.Controls.Add(this.empresaBindingNavigator);
             this.Controls.Add(this.pnlButtom);
@@ -304,6 +353,7 @@ namespace GUIPBD
             this.Load += new System.EventHandler(this.Form2_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlButtom.ResumeLayout(false);
+            this.pnlButtom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresaBindingNavigator)).EndInit();
@@ -341,5 +391,7 @@ namespace GUIPBD
         private System.Windows.Forms.DataGridView empresaDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.TextBox razonSocialTextBox;
+        private System.Windows.Forms.TextBox idEmpresaTextBox;
     }
 }
