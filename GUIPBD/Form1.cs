@@ -16,5 +16,11 @@ namespace GUIPBD
         {
             InitializeComponent();
         }
+
+        private void btnEmpresa_Click(object sender, EventArgs e)
+        {
+            Form2 empresa = new Form2();
+            empresa.ShowDialog();
+        }
     }
 }
