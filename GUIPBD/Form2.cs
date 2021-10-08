@@ -61,21 +61,21 @@ namespace GUIPBD
                     this.pnlTop.Enabled = true;
                     this.pnlButtom.Enabled = false;
                     this.empresaDataGridView.Enabled = true;
-                    this.empresaBindingNavigator.Enabled = true;
+                    //this.empresaBindingNavigator.Enabled = true;
                     break;
 
                 case "insert":
                     this.pnlTop.Enabled = false;
                     this.pnlButtom.Enabled = true;
                     this.empresaDataGridView.Enabled = false;
-                    this.empresaBindingNavigator.Enabled = false;
+                    //this.empresaBindingNavigator.Enabled = false;
                     break;
 
                 case "update":
                     this.pnlTop.Enabled = false;
                     this.pnlButtom.Enabled = true;
                     this.empresaDataGridView.Enabled = false;
-                    this.empresaBindingNavigator.Enabled = false;
+                    //this.empresaBindingNavigator.Enabled = false;
                     break;
             }
         }
@@ -121,7 +121,6 @@ namespace GUIPBD
 
         private bool validar()
         {
-
             this.errorProvider1.Clear();
             bool validar = true;
 
