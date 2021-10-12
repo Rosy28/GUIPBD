@@ -39,10 +39,9 @@ namespace GUIPBD
             // btnEmpresa
             // 
             this.btnEmpresa.Image = ((System.Drawing.Image)(resources.GetObject("btnEmpresa.Image")));
-            this.btnEmpresa.Location = new System.Drawing.Point(134, 162);
-            this.btnEmpresa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEmpresa.Location = new System.Drawing.Point(100, 132);
             this.btnEmpresa.Name = "btnEmpresa";
-            this.btnEmpresa.Size = new System.Drawing.Size(133, 91);
+            this.btnEmpresa.Size = new System.Drawing.Size(100, 74);
             this.btnEmpresa.TabIndex = 0;
             this.btnEmpresa.Text = "Empresa";
             this.btnEmpresa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -54,33 +53,31 @@ namespace GUIPBD
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe MDL2 Assets", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(130, 31);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(98, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(592, 30);
+            this.label1.Size = new System.Drawing.Size(487, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Bienvenidos al sistema de control de alumnos y empresas";
             // 
             // btnAlumno
             // 
             this.btnAlumno.Image = ((System.Drawing.Image)(resources.GetObject("btnAlumno.Image")));
-            this.btnAlumno.Location = new System.Drawing.Point(378, 162);
-            this.btnAlumno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAlumno.Location = new System.Drawing.Point(284, 132);
             this.btnAlumno.Name = "btnAlumno";
-            this.btnAlumno.Size = new System.Drawing.Size(133, 91);
+            this.btnAlumno.Size = new System.Drawing.Size(100, 74);
             this.btnAlumno.TabIndex = 2;
             this.btnAlumno.Text = "Alumno";
             this.btnAlumno.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAlumno.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAlumno.UseVisualStyleBackColor = true;
+            this.btnAlumno.Click += new System.EventHandler(this.btnAlumno_Click);
             // 
             // btnAlumnoEmpresa
             // 
             this.btnAlumnoEmpresa.Image = ((System.Drawing.Image)(resources.GetObject("btnAlumnoEmpresa.Image")));
-            this.btnAlumnoEmpresa.Location = new System.Drawing.Point(616, 162);
-            this.btnAlumnoEmpresa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAlumnoEmpresa.Location = new System.Drawing.Point(462, 132);
             this.btnAlumnoEmpresa.Name = "btnAlumnoEmpresa";
-            this.btnAlumnoEmpresa.Size = new System.Drawing.Size(133, 91);
+            this.btnAlumnoEmpresa.Size = new System.Drawing.Size(100, 74);
             this.btnAlumnoEmpresa.TabIndex = 3;
             this.btnAlumnoEmpresa.Text = "AlumnoEmpresa";
             this.btnAlumnoEmpresa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -89,15 +86,14 @@ namespace GUIPBD
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(921, 388);
+            this.ClientSize = new System.Drawing.Size(691, 315);
             this.Controls.Add(this.btnAlumnoEmpresa);
             this.Controls.Add(this.btnAlumno);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEmpresa);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
