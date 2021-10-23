@@ -28,5 +28,11 @@ namespace GUIPBD
             fAlumno alumno = new fAlumno();
             alumno.ShowDialog();
         }
+
+        private void btnAlumnoEmpresa_Click(object sender, EventArgs e)
+        {
+            fAlumnoEmpresa x = new fAlumnoEmpresa();
+            x.ShowDialog();
+        }
     }
 }

@@ -83,6 +83,7 @@ namespace GUIPBD
             this.btnAlumnoEmpresa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAlumnoEmpresa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAlumnoEmpresa.UseVisualStyleBackColor = true;
+            this.btnAlumnoEmpresa.Click += new System.EventHandler(this.btnAlumnoEmpresa_Click);
             // 
             // Form1
             // 
