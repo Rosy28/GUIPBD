@@ -31,23 +31,25 @@ namespace GUIPBD
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label idAlumnoEmpresaLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAlumnoEmpresa));
             System.Windows.Forms.Label anioInicioLabel;
             System.Windows.Forms.Label anioFinLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAlumnoEmpresa));
             this.pnlTop = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.pnlButtom = new System.Windows.Forms.Panel();
+            this.anioFinNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.vAlumnoEmpresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pBDDataSet = new GUIPBD.PBDDataSet();
+            this.anioInicioNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.cboEmpresa = new System.Windows.Forms.ComboBox();
             this.empresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pBDDataSet = new GUIPBD.PBDDataSet();
             this.label2 = new System.Windows.Forms.Label();
             this.cboAlumno = new System.Windows.Forms.ComboBox();
             this.alumnoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.idAlumnoEmpresaTextBox = new System.Windows.Forms.TextBox();
-            this.vAlumnoEmpresaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.vAlumnoEmpresaTableAdapter = new GUIPBD.PBDDataSetTableAdapters.vAlumnoEmpresaTableAdapter();
@@ -78,23 +80,22 @@ namespace GUIPBD
             this.alumnoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.empresaTableAdapter = new GUIPBD.PBDDataSetTableAdapters.EmpresaTableAdapter();
             this.alumnoEmpresaTableAdapter = new GUIPBD.PBDDataSetTableAdapters.AlumnoEmpresaTableAdapter();
-            this.anioInicioNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.anioFinNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.btnReporte = new System.Windows.Forms.Button();
             idAlumnoEmpresaLabel = new System.Windows.Forms.Label();
             anioInicioLabel = new System.Windows.Forms.Label();
             anioFinLabel = new System.Windows.Forms.Label();
             this.pnlTop.SuspendLayout();
             this.pnlButtom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBDDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.alumnoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.anioFinNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vAlumnoEmpresaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBDDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.anioInicioNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alumnoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vAlumnoEmpresaBindingNavigator)).BeginInit();
             this.vAlumnoEmpresaBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vAlumnoEmpresaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnoBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.anioInicioNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.anioFinNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // idAlumnoEmpresaLabel
@@ -107,8 +108,27 @@ namespace GUIPBD
             idAlumnoEmpresaLabel.TabIndex = 2;
             idAlumnoEmpresaLabel.Text = "id Alumno Empresa:";
             // 
+            // anioInicioLabel
+            // 
+            anioInicioLabel.AutoSize = true;
+            anioInicioLabel.Location = new System.Drawing.Point(326, 26);
+            anioInicioLabel.Name = "anioInicioLabel";
+            anioInicioLabel.Size = new System.Drawing.Size(58, 13);
+            anioInicioLabel.TabIndex = 8;
+            anioInicioLabel.Text = "anio Inicio:";
+            // 
+            // anioFinLabel
+            // 
+            anioFinLabel.AutoSize = true;
+            anioFinLabel.Location = new System.Drawing.Point(337, 73);
+            anioFinLabel.Name = "anioFinLabel";
+            anioFinLabel.Size = new System.Drawing.Size(47, 13);
+            anioFinLabel.TabIndex = 10;
+            anioFinLabel.Text = "anio Fin:";
+            // 
             // pnlTop
             // 
+            this.pnlTop.Controls.Add(this.btnReporte);
             this.pnlTop.Controls.Add(this.btnDelete);
             this.pnlTop.Controls.Add(this.btnUpdate);
             this.pnlTop.Controls.Add(this.btnInsert);
@@ -173,6 +193,42 @@ namespace GUIPBD
             this.pnlButtom.Size = new System.Drawing.Size(809, 134);
             this.pnlButtom.TabIndex = 3;
             // 
+            // anioFinNumericUpDown
+            // 
+            this.anioFinNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.vAlumnoEmpresaBindingSource, "anioFin", true));
+            this.anioFinNumericUpDown.Location = new System.Drawing.Point(390, 73);
+            this.anioFinNumericUpDown.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.anioFinNumericUpDown.Name = "anioFinNumericUpDown";
+            this.anioFinNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.anioFinNumericUpDown.TabIndex = 11;
+            // 
+            // vAlumnoEmpresaBindingSource
+            // 
+            this.vAlumnoEmpresaBindingSource.DataMember = "vAlumnoEmpresa";
+            this.vAlumnoEmpresaBindingSource.DataSource = this.pBDDataSet;
+            // 
+            // pBDDataSet
+            // 
+            this.pBDDataSet.DataSetName = "PBDDataSet";
+            this.pBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // anioInicioNumericUpDown
+            // 
+            this.anioInicioNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.vAlumnoEmpresaBindingSource, "anioInicio", true));
+            this.anioInicioNumericUpDown.Location = new System.Drawing.Point(390, 26);
+            this.anioInicioNumericUpDown.Maximum = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.anioInicioNumericUpDown.Name = "anioInicioNumericUpDown";
+            this.anioInicioNumericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.anioInicioNumericUpDown.TabIndex = 9;
+            // 
             // cboEmpresa
             // 
             this.cboEmpresa.DataSource = this.empresaBindingSource;
@@ -189,11 +245,6 @@ namespace GUIPBD
             // 
             this.empresaBindingSource.DataMember = "Empresa";
             this.empresaBindingSource.DataSource = this.pBDDataSet;
-            // 
-            // pBDDataSet
-            // 
-            this.pBDDataSet.DataSetName = "PBDDataSet";
-            this.pBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -239,11 +290,6 @@ namespace GUIPBD
             this.idAlumnoEmpresaTextBox.Size = new System.Drawing.Size(121, 20);
             this.idAlumnoEmpresaTextBox.TabIndex = 3;
             // 
-            // vAlumnoEmpresaBindingSource
-            // 
-            this.vAlumnoEmpresaBindingSource.DataMember = "vAlumnoEmpresa";
-            this.vAlumnoEmpresaBindingSource.DataSource = this.pBDDataSet;
-            // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -280,6 +326,8 @@ namespace GUIPBD
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.EmpresaTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = GUIPBD.PBDDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsuarioTableAdapter = null;
+            this.tableAdapterManager.vAlumnoEmpresaTableAdapter = null;
             // 
             // vAlumnoEmpresaBindingNavigator
             // 
@@ -502,49 +550,16 @@ namespace GUIPBD
             // 
             this.alumnoEmpresaTableAdapter.ClearBeforeFill = true;
             // 
-            // anioInicioLabel
+            // btnReporte
             // 
-            anioInicioLabel.AutoSize = true;
-            anioInicioLabel.Location = new System.Drawing.Point(326, 26);
-            anioInicioLabel.Name = "anioInicioLabel";
-            anioInicioLabel.Size = new System.Drawing.Size(58, 13);
-            anioInicioLabel.TabIndex = 8;
-            anioInicioLabel.Text = "anio Inicio:";
-            // 
-            // anioInicioNumericUpDown
-            // 
-            this.anioInicioNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.vAlumnoEmpresaBindingSource, "anioInicio", true));
-            this.anioInicioNumericUpDown.Location = new System.Drawing.Point(390, 26);
-            this.anioInicioNumericUpDown.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.anioInicioNumericUpDown.Name = "anioInicioNumericUpDown";
-            this.anioInicioNumericUpDown.Size = new System.Drawing.Size(120, 20);
-            this.anioInicioNumericUpDown.TabIndex = 9;
-            // 
-            // anioFinLabel
-            // 
-            anioFinLabel.AutoSize = true;
-            anioFinLabel.Location = new System.Drawing.Point(337, 73);
-            anioFinLabel.Name = "anioFinLabel";
-            anioFinLabel.Size = new System.Drawing.Size(47, 13);
-            anioFinLabel.TabIndex = 10;
-            anioFinLabel.Text = "anio Fin:";
-            // 
-            // anioFinNumericUpDown
-            // 
-            this.anioFinNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.vAlumnoEmpresaBindingSource, "anioFin", true));
-            this.anioFinNumericUpDown.Location = new System.Drawing.Point(390, 73);
-            this.anioFinNumericUpDown.Maximum = new decimal(new int[] {
-            99999,
-            0,
-            0,
-            0});
-            this.anioFinNumericUpDown.Name = "anioFinNumericUpDown";
-            this.anioFinNumericUpDown.Size = new System.Drawing.Size(120, 20);
-            this.anioFinNumericUpDown.TabIndex = 11;
+            this.btnReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.Image")));
+            this.btnReporte.Location = new System.Drawing.Point(234, 19);
+            this.btnReporte.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(64, 60);
+            this.btnReporte.TabIndex = 5;
+            this.btnReporte.UseVisualStyleBackColor = true;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
             // fAlumnoEmpresa
             // 
@@ -563,17 +578,17 @@ namespace GUIPBD
             this.pnlTop.ResumeLayout(false);
             this.pnlButtom.ResumeLayout(false);
             this.pnlButtom.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBDDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.alumnoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.anioFinNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vAlumnoEmpresaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBDDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.anioInicioNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.empresaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alumnoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vAlumnoEmpresaBindingNavigator)).EndInit();
             this.vAlumnoEmpresaBindingNavigator.ResumeLayout(false);
             this.vAlumnoEmpresaBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vAlumnoEmpresaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alumnoBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.anioInicioNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.anioFinNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -627,5 +642,6 @@ namespace GUIPBD
         private PBDDataSetTableAdapters.AlumnoEmpresaTableAdapter alumnoEmpresaTableAdapter;
         private System.Windows.Forms.NumericUpDown anioFinNumericUpDown;
         private System.Windows.Forms.NumericUpDown anioInicioNumericUpDown;
+        private System.Windows.Forms.Button btnReporte;
     }
 }

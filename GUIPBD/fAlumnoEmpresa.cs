@@ -158,5 +158,11 @@ namespace GUIPBD
                 MessageBox.Show("Error: " + ex.Message.ToString());
             }
         }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            rAlumnoEmpresa report = new rAlumnoEmpresa();
+            report.ShowDialog();
+        }
     }
 }
